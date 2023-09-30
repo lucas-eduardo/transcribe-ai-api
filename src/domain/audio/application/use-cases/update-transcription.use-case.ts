@@ -4,14 +4,13 @@ import { AudioEntity } from '@/domain/audio/enterprise/entities/audio.entity'
 import { Injectable } from '@nestjs/common'
 
 import { AudioRepository } from '../repositories/audio.repository'
-import { InvalidAudioTypeError } from './errors/invalid-file-type-error'
 
 interface IUpdateTranscriptionUseCaseRequest {
   audioId: string
   transcription: string
 }
 
-type UpdateTranscriptionResponse = Either<InvalidAudioTypeError, AudioEntity>
+type UpdateTranscriptionResponse = Either<ResourceNotFoundError, AudioEntity>
 
 @Injectable()
 export class UpdateTranscriptionUseCase {
