@@ -6,7 +6,7 @@ import { AppModule } from './app.module'
 import { EnvService } from './env/env.service'
 
 async function bootstrap() {
-  const pathTemp = resolve(__dirname, '../temp')
+  const pathTemp = resolve(__dirname, '../../temp')
 
   const existFolderTemp = existsSync(pathTemp)
 
