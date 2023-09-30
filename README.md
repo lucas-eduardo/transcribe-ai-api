@@ -66,7 +66,7 @@ Para executar a aplicação, siga os passos abaixo:
 yarn start:dev
 ```
 
-A aplicação estará disponível em http://localhost:3000.
+A aplicação estará disponível em http://localhost:3333.
 
 ## Testes unitários
 Execute os testes unitários com o seguinte comando:
