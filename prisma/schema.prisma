@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AudioStatus {
+  pending
+  processing
+  success
+  failed
+}
+
+model Audio {
+  id String @id @default(uuid())
+
+  status AudioStatus @default(pending)
+
+  name         String? @unique
+  originalName String  @map("original_name")
+
+  transcription String?
+  srt           String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  @@map("audios")
+}
+
+model PromptTemplate {
+  id String @id @default(uuid())
+
+  enabled Boolean @default(true)
+
+  title    String @unique
+  template String
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  @@map("prompt_templates")
+}
