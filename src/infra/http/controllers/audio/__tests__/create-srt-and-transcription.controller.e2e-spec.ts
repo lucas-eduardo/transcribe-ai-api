@@ -64,8 +64,6 @@ describe('Create SRT and transcription to audio (E2E)', () => {
         expect(audio?.srt).toBeTypeOf('string')
         expect(audio?.transcription).toBeTypeOf('string')
         expect(audio?.transcription).toContain('10, 9, 8, 7, 6, 5, 4, 3, 2, 1')
-
-        removeFile(audio!.originalName)
       })
     })
 
