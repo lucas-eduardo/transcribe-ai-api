@@ -4,7 +4,7 @@ import {
 } from '@/domain/audio/application/srt-and-transcription/srt'
 import { EnvService } from '@/infra/env/env.service'
 import { Injectable } from '@nestjs/common'
-import { createReadStream } from 'node:fs'
+import { createReadStream, unlinkSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { OpenAI } from 'openai'
 
@@ -32,12 +32,14 @@ export class OpenAISrt implements Srt {
       prompt,
     })
 
+    unlinkSync(this.pathAudio(fileName))
+
     const srt = response as unknown as string
 
     return srt.trim()
   }
 
   private pathAudio(fileName: string) {
-    return resolve(__dirname, '../../../../temp', fileName)
+    return resolve(__dirname, '../../../temp', fileName)
   }
 }
