@@ -27,6 +27,6 @@ export class LocalStorage implements Uploader {
   }
 
   private pathDestination(fileName) {
-    return resolve(__dirname, '../../../temp', fileName)
+    return resolve(__dirname, '../../temp', fileName)
   }
 }
