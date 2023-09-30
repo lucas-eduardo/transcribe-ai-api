@@ -50,7 +50,7 @@ Siga os passos abaixo para instalar as dependências do projeto:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/lucas-eduardo/transcribe-ai.git
+git clone https://github.com/lucas-eduardo/transcribe-ai-api.git
 
 # Acesse o diretório do projeto
 cd transcribe-ai
@@ -83,3 +83,5 @@ Para executar os testes end-to-end (E2E), siga os passos abaixo:
 2. Execute o comando `docker compose up` para iniciar os serviços necessários.
 
 3. Execute o comando `yarn test:e2e` para executar os testes E2E.
+
+[Repositório do Frontend](https://github.com/lucas-eduardo/transcribe-ai-web)
