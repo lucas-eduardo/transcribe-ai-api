@@ -60,5 +60,8 @@
     "unplugin-swc": "^1.4.2",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.5"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
