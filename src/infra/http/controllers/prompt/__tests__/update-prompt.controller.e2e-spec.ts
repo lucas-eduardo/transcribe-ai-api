@@ -3,6 +3,7 @@ import { DatabaseModule } from '@/infra/database/database.module'
 import { PrismaService } from '@/infra/database/prisma/prisma.service'
 import { INestApplication } from '@nestjs/common'
 import { Test } from '@nestjs/testing'
+import { randomUUID } from 'node:crypto'
 import request from 'supertest'
 import { PromptFactory } from 'test/factories/make-prompt.factory'
 
@@ -108,7 +109,7 @@ describe('Update prompt (E2E)', () => {
         await promptFactory.makePrismaPrompt()
 
         const response = await request(app.getHttpServer())
-          .patch('/prompts/123')
+          .patch(`/prompts/${randomUUID()}`)
           .send({
             title: 'Updated title',
             template: 'Updated template',
