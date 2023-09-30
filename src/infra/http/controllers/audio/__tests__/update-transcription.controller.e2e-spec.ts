@@ -4,6 +4,7 @@ import { DatabaseModule } from '@/infra/database/database.module'
 import { PrismaService } from '@/infra/database/prisma/prisma.service'
 import { INestApplication } from '@nestjs/common'
 import { Test } from '@nestjs/testing'
+import { randomUUID } from 'node:crypto'
 import request from 'supertest'
 import { AudioFactory } from 'test/factories/make-audio.factory'
 
@@ -69,7 +70,7 @@ describe('Update transcription (E2E)', () => {
         })
 
         const response = await request(app.getHttpServer())
-          .patch('/audios/123/transcription')
+          .patch(`/audios/${randomUUID()}/transcription`)
           .send({
             transcription: 'Updated transcription',
           })

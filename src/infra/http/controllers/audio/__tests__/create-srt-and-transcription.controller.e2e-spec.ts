@@ -4,6 +4,7 @@ import { DatabaseModule } from '@/infra/database/database.module'
 import { PrismaService } from '@/infra/database/prisma/prisma.service'
 import { INestApplication } from '@nestjs/common'
 import { Test } from '@nestjs/testing'
+import { randomUUID } from 'node:crypto'
 import { unlinkSync } from 'node:fs'
 import { resolve } from 'node:path'
 import request from 'supertest'
@@ -134,7 +135,7 @@ describe('Create SRT and transcription to audio (E2E)', () => {
 
       it('should return 400 when invalid audioId', async () => {
         const response = await request(app.getHttpServer())
-          .post('/audios/123/str-transcription')
+          .post(`/audios/${randomUUID()}/str-transcription`)
           .send({
             name: 'Test generate srt and transcription',
             prompt: 'Contagem regressiva',
