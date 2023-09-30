@@ -1,5 +1,5 @@
 {
-  "name": "transcribe-ai",
+  "name": "transcribe-ai-api",
   "version": "0.0.1",
   "description": "Uma aplicação poderosa para simplificar a transcrição de áudios, oferecendo recursos avançados de geração de legendas (SRT) e transcrições automatizadas. Integração inteligente com o ChatGPT para enriquecer o conteúdo gerado.",
   "author": "Lucas Eduardo",
