@@ -40,6 +40,6 @@ export class OpenAISrt implements Srt {
   }
 
   private pathAudio(fileName: string) {
-    return resolve(__dirname, '../../../temp', fileName)
+    return resolve(__dirname, '../../../../temp', fileName)
   }
 }
